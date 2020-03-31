@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>BOOM Game</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            <ul class="code-box">
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+            </ul>
+            <div class="bomb-box">
+                <p id="countdown"></p>
+            </div>
+            <div class="form-box">
+                <form>
+                    <input class="result" readonly/>
+                    <div>
+                        <input type="button" value="1" class="btn">
+                        <input type="button" value="2" class="btn">
+                        <input type="button" value="3" class="btn">
+                    </div>
+                    <div>
+                        <input type="button" value="4" class="btn">
+                        <input type="button" value="5" class="btn">
+                        <input type="button" value="6" class="btn">
+                    </div>
+                    <div>
+                        <input type="button" value="7" class="btn">
+                        <input type="button" value="8" class="btn">
+                        <input type="button" value="9" class="btn">
+                    </div>
+                    <div>
+                        <input type="button" value="0" class="btn">
+                        <button type="button" id="back-btn">Back</button>
+                        <button type="submit" id="submit-btn">Enter</button>
+                    </div>
+                </form>
+            </div>
+            <div class="close close-first">
+                <p id="end-text"></p>
+                <div>
+                    <img src="img/reload.png" alt="restart" id="reload"/>
+                </div>
+            </div>
+            <div class="close close-second"></div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
