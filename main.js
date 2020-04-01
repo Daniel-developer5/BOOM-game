@@ -10,7 +10,9 @@ let close = document.querySelectorAll(".close")
 let reloader = document.getElementById("reload")
 let endText = document.getElementById("end-text")
 
-setInterval(() => {
+let timerId = setInterval(setTimer ,1000)
+
+function setTimer() {
     if (timer > 0) {
         --timer
         let minutes = Math.floor(timer / 60)
@@ -19,13 +21,14 @@ setInterval(() => {
     } else {
         gameEnd('lose', 'You lose!')
     }
-},1000)
+}
 
 function gameEnd(classN, text) {
     close.forEach(elem => {
         elem.classList.add(classN)
     })
     endText.textContent = text
+    clearInterval(timerId)
 }
 
 let codeArrays = [
@@ -62,7 +65,9 @@ codeRow.forEach((elem, index) => {
 
 btns.forEach(elem => {
     elem.addEventListener('click', () => {
-        result.value += elem.value
+        if (result.value.length != 4) {
+            result.value += elem.value
+        }
     })
 })
 
@@ -78,11 +83,12 @@ form.addEventListener('submit', (event) => {
     if (sum == result.value) {
         gameEnd('win', 'You win!')
     } else {
+        let storedValue = result.value
         timer -= 20
         result.value = 'Wrong password!'
         result.classList.add('error')
         setTimeout(() => {
-            result.value = ''
+            result.value = storedValue
             result.classList.remove('error')
         }, 500)
     }
