@@ -108,6 +108,8 @@ form div {
     top: 50%;
     bottom: 0;
     transform-origin: top;
+    display: flex;
+    align-items: flex-end;
 }
 
 .win {
@@ -120,7 +122,7 @@ form div {
     background-color: #000;
 }
 
-.close p {
+.close-first p {
     margin: 0;
     font-size: 25px;
     color: #ff0000;
@@ -133,4 +135,31 @@ form div {
 #reload {
     cursor: pointer;
     width: 30px;
+}
+
+.about-me {
+    color: #fff;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.win .about-me {
+    color: #000;
+}
+
+.about-me p {
+    margin: 0;
+}
+
+.about-me a {
+    text-decoration: none;
+    color: #2f00ff;
+}
+
+.about-me a:hover {
+    color: #00ff15;
+}
+
+.next-link {
+    margin-right: 3px;
 }
